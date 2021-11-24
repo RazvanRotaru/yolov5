@@ -468,5 +468,5 @@ def save_one_box(xyxy, im, file='image.jpg', gain=1.02, pad=10, square=False, BG
         print(increment_path(file).with_suffix('.q'))
         print(type(xyxy))
         cv2.imwrite(str(increment_path(file).with_suffix('.jpg')), crop)
-        # torch.save(str(increment_path(file).with_suffix('.bbox')), xyxy)
+        torch.save(xyxy, str(increment_path(file).with_suffix('.bbox')))
     return crop
