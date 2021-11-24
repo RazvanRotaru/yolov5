@@ -466,6 +466,7 @@ def save_one_box(xyxy, im, file='image.jpg', gain=1.02, pad=10, square=False, BG
     if save:
         file.parent.mkdir(parents=True, exist_ok=True)  # make directory
         print(increment_path(file).with_suffix('.q'))
+        print(type(xyxy))
         cv2.imwrite(str(increment_path(file).with_suffix('.jpg')), crop)
-        # torch.save(str(increment_path('bboxes.txt').with_suffix('.txt')), xyxy)
+        # torch.save(str(increment_path(file).with_suffix('.bbox')), xyxy)
     return crop
